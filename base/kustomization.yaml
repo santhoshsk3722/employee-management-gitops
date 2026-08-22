@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: employee-mgmt
+resources:
+  - namespace/namespace.yaml
+  - eureka-server/deployment.yaml
+  - eureka-server/service.yaml
+  - eureka-server/servicemonitor.yaml
+  - api-gateway/deployment.yaml
+  - api-gateway/service.yaml
+  - api-gateway/ingress.yaml
+  - api-gateway/servicemonitor.yaml
+  - api-gateway/hpa.yaml
+  - employee-service/deployment.yaml
+  - employee-service/configmap.yaml
+  - employee-service/service.yaml
+  - employee-service/servicemonitor.yaml
+  - employee-service/hpa.yaml
+  - department-service/deployment.yaml
+  - department-service/configmap.yaml
+  - department-service/service.yaml
+  - department-service/servicemonitor.yaml
+  - department-service/hpa.yaml

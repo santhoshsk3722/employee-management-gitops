@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: employee-mgmt
+  namespace: argocd
+spec:
+  description: Employee Management microservices project
+  sourceRepos:
+    - "https://github.com/<YOUR_GITHUB_ORG>/employee-management-gitops.git"
+  destinations:
+    - namespace: employee-mgmt
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
